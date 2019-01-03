@@ -127,3 +127,21 @@ func testCommon(t *testing.T, MaxOp, MaxWordLen, LetterCount int, InsertProb flo
 		}
 	}
 }
+
+func BenchmarkTrieSmallAlphabet(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		trie := NewTrie()
+		for j := 0; j < 100000; j++ {
+			trie.Insert(RandomLowerCase(30, 2))
+		}
+	}
+}
+
+func BenchmarkTrieNormalAlphabet(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		trie := NewTrie()
+		for j := 0; j < 100000; j++ {
+			trie.Insert(RandomLowerCase(30, 26))
+		}
+	}
+}

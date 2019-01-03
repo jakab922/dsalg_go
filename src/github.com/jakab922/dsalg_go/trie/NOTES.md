@@ -1,0 +1,1 @@
+The benchmark functions show that the current implementation is rather slow. Probably restricting the alphabet to bytes instead of runes and changing the followers hash to a followers array would speed things up a little bit.
