@@ -8,12 +8,9 @@ import (
 )
 
 const (
-	MaxOp      = 20
-	MaxWordLen = 10
-	TestCount  = 100000
-	LowerCase  = "abcdefghijklmnopqrstuvwxyz"
-	INSERT     = 0
-	DELETE     = 1
+	LowerCase = "abcdefghijklmnopqrstuvwxyz"
+	INSERT    = 0
+	DELETE    = 1
 )
 
 type Operation struct {

@@ -5,8 +5,6 @@ import (
 	"strings"
 )
 
-const ()
-
 type Node struct {
 	followers  map[rune]*Node
 	val        []rune
@@ -234,22 +232,4 @@ func (t *Trie) Show() {
 
 func (t *Trie) Len() int {
 	return t.size
-}
-
-func main() {
-	words := []string{
-		"bubba",
-		"bela",
-		"asdasd",
-		"asd",
-	}
-	t := NewTrie()
-
-	for _, word := range words {
-		t.Insert(word)
-		for el := range t.Iterate() {
-			fmt.Println(el)
-		}
-		fmt.Println("")
-	}
 }
