@@ -9,8 +9,8 @@ const (
 )
 
 type SuffixArray struct {
-	r     []rune
-	order []int
+	R     []rune
+	Order []int
 }
 
 func initialOrders(r []rune, alphabet_size int) []int {
@@ -130,18 +130,14 @@ func NewSuffixArray(s string, alphabet_size int) *SuffixArray {
 	return &SuffixArray{r, order}
 }
 
-func (sa *SuffixArray) Order() []int {
-	return sa.order
-}
-
 func main() {
-	s := "baaabbaaa"
+	s := "ababdabc"
 	r := []rune(s)
 	r = append(r, DOLLAR)
 
 	suffix := NewSuffixArray(s, 256)
-	fmt.Printf("suffix.order: %v\n", suffix.order)
-	for _, el := range suffix.order {
+	fmt.Printf("suffix.order: %v\n", suffix.Order)
+	for _, el := range suffix.Order {
 		fmt.Println(string(r[el:]))
 	}
 }
